@@ -165,10 +165,9 @@ void DistortionTest2AudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
             
             *channelData *= drive * range;
             
-            // https://www.desmos.com/calculator/nqfu5lxaij
-            // ここにこの関数を入れると、driveの関数が見れる
-            // g(x) = (2/π) * atan(x)
-            // (atanを表示させるのにarctanを入力する)
+            // Test the function in Desmos (https://www.desmos.com/calculator/)
+            // f(x) = (2/π) * atan(x)
+            // (write "arctan" in Desmos to get the proper function)
             *channelData = (((((2.0f / float_Pi) * atan(*channelData)) * blend) + (cleanSig * (1.0f / blend))) / 2) * volume;
             
             channelData++;
